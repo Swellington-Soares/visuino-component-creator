@@ -1,25 +1,49 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
+import * as fs from "fs";
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+import { libraryNameInput } from "./services/libraryname-service";
+import { LibraryAlreadyExistsError } from "./exception/library-already-exists-error";
+import { componentCreationNameInput } from "./services/creationname-service";
+import { componentFullnameInput } from "./services/fullname-service";
+import { componentClassNameInput } from "./services/classname-service";
+import { createComponentStructure } from "./services/create-service";
+
+
+async function showErrorMessage(message: string) {
+  await vscode.window.showErrorMessage(message);
+}
+
 export function activate(context: vscode.ExtensionContext) {
+  const disposable = vscode.commands.registerCommand(
+    "visuino-component-creator.createComponent",
+    async (uri: vscode.Uri) => {
+      try {
+        const libraryName = await libraryNameInput();
+        if (fs.existsSync(libraryName)) throw new LibraryAlreadyExistsError();
+        
+        const componentCreationName = await componentCreationNameInput();
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "visuino-component-creator" is now active!');
+        const componentFullName = await componentFullnameInput()
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('visuino-component-creator.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Visuino Component Creator!');
-	});
+        const componentClassName = await componentClassNameInput()
 
-	context.subscriptions.push(disposable);
+        await createComponentStructure(
+          uri,
+          libraryName,
+          componentCreationName,
+          componentFullName,
+          componentClassName
+        )
+
+        await vscode.window.showInformationMessage("Component Created!")
+
+      } catch (error: any) {
+        await showErrorMessage(error.message);
+      }
+    }
+  );
+
+  context.subscriptions.push(disposable);
 }
 
 // This method is called when your extension is deactivated
