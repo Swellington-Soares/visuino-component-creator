@@ -2,9 +2,20 @@
   "name": "visuino-component-creator",
   "displayName": "Visuino Component Creator",
   "description": "Create Structure for Visuino Component",
+  "author": {
+    "name": "Swellington Soares",
+    "url": "https://github.com/Swellington-Soares"
+  },
   "publisher": "SwellingtonSoares",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#f2c46f",
+    "theme": "dark"
+  },
+  "pricing": "Free",
   "repository": {
-    "url": "https://github.com/Swellington-Soares/visuino-component-creator"
+    "type": "git",
+    "url": "https://github.com/Swellington-Soares/visuino-component-creator.git"
   },
   "version": "0.0.1",
   "engines": {
