@@ -2,6 +2,10 @@
   "name": "visuino-component-creator",
   "displayName": "Visuino Component Creator",
   "description": "Create Structure for Visuino Component",
+  "publisher": "SwellingtonSoares",
+  "repository": {
+    "url": "https://github.com/Swellington-Soares/visuino-component-creator"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.102.0"
