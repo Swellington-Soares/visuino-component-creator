@@ -1,71 +1,43 @@
-# visuino-component-creator README
+# Visuno Component Generator
 
-This is the README for your extension "visuino-component-creator". After writing up a brief description, we recommend including the following sections.
+Extension for Visual Studio Code that simplifies the creation of **Visuino** components.  
+Adds an option to the workspace context menu to automatically generate the basic structure of a new component.
 
-## Features
+## 📦 What does it do?
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Adds a "Create Visuino Component" option when right-clicking in the **Explorer**.
+- Automatically generates the essential structure files.
 
-For example if there is an image subfolder under your extension project workspace:
+## 🖱️ How to Use
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Right-click on an empty space in the **workspace**.
+2. Click on the `Create Visuino Component` option.
+3. Enter the **Library Name**.
+4. Enter the **Component Creation Name**.
+5. Enter the **Full Component Name**.
+6. Enter the **Component Class Name**.  
+   (The prefix `TArduino` is automatically added, so you don’t need to include it.)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+7. Done! The structure will be created in the selected folder.
 
-## Requirements
+## 🛠️ Generated Structure
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Example:
 
-## Extension Settings
+```
+MyComponentLib/
+│   library.properties
+│   visuino.library
+│   
+├───src
+│       MyComponentLib_MyComponent.h
+│       
+└───Visuino
+    │   Visuino.MyComponent.vcomp
+    │
+    └───images
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## 📄 License
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+MIT © Your Name or Organization
