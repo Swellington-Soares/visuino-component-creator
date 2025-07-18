@@ -22,13 +22,13 @@ export function activate(context: vscode.ExtensionContext) {
         const libraryName = await libraryNameInput();
 
         if (fs.existsSync(path.join(uri.fsPath, libraryName))) 
-          throw new LibraryAlreadyExistsError();
+          {throw new LibraryAlreadyExistsError();}
         
         const componentCreationName = await componentCreationNameInput();
 
-        const componentFullName = await componentFullnameInput()
+        const componentFullName = await componentFullnameInput();
 
-        const componentClassName = await componentClassNameInput()
+        const componentClassName = await componentClassNameInput();
 
         await createComponentStructure(
           uri,
@@ -36,9 +36,9 @@ export function activate(context: vscode.ExtensionContext) {
           componentCreationName,
           componentFullName,
           componentClassName
-        )
+        );
 
-        await vscode.window.showInformationMessage("Component Created!")
+        await vscode.window.showInformationMessage("Component Created!");
 
       } catch (error: any) {
         await showErrorMessage(error.message);

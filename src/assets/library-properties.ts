@@ -10,4 +10,4 @@ url=EDIT HERE
 architectures=*
 `;
 
-export { libraryTemplate }
+export { libraryTemplate };

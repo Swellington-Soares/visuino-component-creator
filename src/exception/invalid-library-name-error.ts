@@ -5,4 +5,4 @@ class InvalidLibraryNameError extends Error {
   }
 }
 
-export { InvalidLibraryNameError }
+export { InvalidLibraryNameError };

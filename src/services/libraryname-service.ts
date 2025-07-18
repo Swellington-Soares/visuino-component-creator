@@ -10,9 +10,9 @@ async function libraryNameInput() : Promise<string> {
         placeHolder: 'MyVisuinoLibrary',
         prompt: 'Library Name (e.g. MyVisuinoLibrary)'
     });
-    if (isNullOrEmpty(libraryName)) throw new InvalidArgumentError(`Library name cannot be empty`);
-    if (!isValidVariableName(libraryName as string)) throw new InvalidLibraryNameError();
+    if (isNullOrEmpty(libraryName)) { throw new InvalidArgumentError(`Library name cannot be empty`); };
+    if (!isValidVariableName(libraryName as string)) {throw new InvalidLibraryNameError();}
     return libraryName.trim();
 }
 
-export { libraryNameInput }
+export { libraryNameInput };

@@ -5,4 +5,4 @@ class InvalidArgumentError extends Error {
   }
 }
 
-export { InvalidArgumentError }
+export { InvalidArgumentError };

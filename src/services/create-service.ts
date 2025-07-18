@@ -74,7 +74,7 @@ async function createComponentStructure(uri: vscode.Uri,
 
     fs.writeFileSync(path.join(componentBasePath, "visuino.library"), "");
     fs.writeFileSync(libraryFilePath, libraryTemplate);
-    fs.writeFileSync(vcomfilePath, componentTemplate(libraryName, componentClassName, componentCreationName, componentFullName))
+    fs.writeFileSync(vcomfilePath, componentTemplate(libraryName, componentClassName, componentCreationName, componentFullName));
     fs.writeFileSync(arduinoCodeFilePath, arduinoCodeTemplate(libraryName, componentFileName));
 
 
@@ -88,4 +88,4 @@ async function createComponentStructure(uri: vscode.Uri,
 
 }
 
-export { createComponentStructure }
+export { createComponentStructure };

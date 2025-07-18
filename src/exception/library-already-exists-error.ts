@@ -5,4 +5,4 @@ class LibraryAlreadyExistsError extends Error {
   }
 }
 
-export { LibraryAlreadyExistsError }
+export { LibraryAlreadyExistsError };
