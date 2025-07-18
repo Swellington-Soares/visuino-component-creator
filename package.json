@@ -1,7 +1,7 @@
 {
   "name": "visuino-component-creator",
   "displayName": "Visuino Component Creator",
-  "description": "Create Structure of new Visuino Component",
+  "description": "Create Structure for Visuino Component",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.102.0"

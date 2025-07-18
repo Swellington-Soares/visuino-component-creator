@@ -23,7 +23,7 @@ ${componentLibrary}: Namespace
   [CreateName('${componentName}')]
   [ArduinoClass('${componentLibrary}::${className}')]
   [ArduinoInclude('${componentLibrary}_${className}.h')]
-  +T${className}: TArduinoComponent
+  +TArduino${className}: TArduinoComponent
     
     [OWArduinoExclude]
     Version: string = '1.0'

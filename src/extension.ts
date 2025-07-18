@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import * as fs from "fs";
+import * as path from "path";
 
 import { libraryNameInput } from "./services/libraryname-service";
 import { LibraryAlreadyExistsError } from "./exception/library-already-exists-error";
@@ -19,7 +20,9 @@ export function activate(context: vscode.ExtensionContext) {
     async (uri: vscode.Uri) => {
       try {
         const libraryName = await libraryNameInput();
-        if (fs.existsSync(libraryName)) throw new LibraryAlreadyExistsError();
+
+        if (fs.existsSync(path.join(uri.fsPath, libraryName))) 
+          throw new LibraryAlreadyExistsError();
         
         const componentCreationName = await componentCreationNameInput();
 
