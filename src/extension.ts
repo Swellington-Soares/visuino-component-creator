@@ -15,6 +15,7 @@ async function showErrorMessage(message: string) {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+
   const disposable = vscode.commands.registerCommand(
     "visuino-component-creator.createComponent",
     async (uri: vscode.Uri) => {
@@ -31,6 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
         const componentClassName = await componentClassNameInput();
 
         await createComponentStructure(
+          context,
           uri,
           libraryName,
           componentCreationName,

@@ -17,7 +17,7 @@
     "type": "git",
     "url": "https://github.com/Swellington-Soares/visuino-component-creator.git"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -66,6 +66,7 @@
     "@vscode/test-cli": "^0.0.11",
     "@vscode/test-electron": "^2.5.2",
     "esbuild": "^0.25.3",
+    "esbuild-copy-static-files": "^0.1.0",
     "eslint": "^9.25.1",
     "install": "^0.13.0",
     "npm": "^11.4.2",

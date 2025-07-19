@@ -1,7 +1,7 @@
 const esbuild = require("esbuild");
-
 const production = process.argv.includes('--production');
 const watch = process.argv.includes('--watch');
+
 
 /**
  * @type {import('esbuild').Plugin}
@@ -39,7 +39,7 @@ async function main() {
 		logLevel: 'silent',
 		plugins: [
 			/* add to the end of plugins array */
-			esbuildProblemMatcherPlugin,
+			esbuildProblemMatcherPlugin
 		],
 	});
 	if (watch) {

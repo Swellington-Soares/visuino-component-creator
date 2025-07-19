@@ -16,7 +16,7 @@
 		"paths": {
 			"@/*": ["src/*"],
 			"@utils/*": ["src/utils/*"],
-			"@services/*": ["src/services/*"]
+			"@services/*": ["src/services/*"]			
 		}
 	}
 }
